@@ -2,12 +2,16 @@ body {
    background-color: #0e1e45;
    color: #17824a;
   
-  border-style: double;
+   border-style: double;
    border-width: 25px;
    border-color: #83057a;
   
-  font-family: Courier New;
-  font-size: 2em; */
+   font-family: Courier New;
+   font-size: 2em; */
+}
+
+main {
+   margin: 0.5em;
 }
 
 
