@@ -3,25 +3,48 @@
 <head>
     <title>Pokémon</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Resources/DarkOcean.css">
+    <link rel="stylesheet" type="text/css" href="Resources/main.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
-    <header>
-        <div class="logo">
-            <h1></h1>
-        </div>
-    </header>
+    <div class="header">
+        <h2>You know what you sign up for</h2>
+        <p>Scroll down for more information</p>
+        <div class="scroll-down"></div>
+    </div>
 
-    <main>
+    <div id="navbar">
+        <a class="active" href="index.html">Home</a>
+        <a href="pokedex.html">Pokédex</a>
+        <a href="explorer.html">Explorer</a>
+    </div>
 
-    <h1>wowie</h1>
+    <div class="content">
+        <h3>Sticky Navigation Example</h3>
+        <p>The navbar will stick to the top when you reach its scroll position.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
 
-    wow pokemon so cool
+    <script>
+        window.onscroll = function() {myFunction()};
 
-    </main>
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
 
-    <footer>
-        <p>&copy;2024 </p>
-    </footer>
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
 </body>
 </html>
