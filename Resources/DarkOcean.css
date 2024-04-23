@@ -72,6 +72,9 @@ figcaption {
 ol {
    margin-left: 1em;
 }
+span.small {
+   font-size: smaller;
+}
 
 .dark {
    background-color: black;
