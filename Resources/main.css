@@ -1,12 +1,22 @@
 @font-face {
-    font-family: Walt;
-    src: url(Fonts/waltographUI.ttf);
+    font-family: Thumbnail;
+    src: url(Fonts/Pokemon\ Hollow.ttf);
  }
+
+ @font-face {
+  font-family: Logo;
+  src: url(Fonts/Pokemon\ Solid.ttf);
+}
 
 body {
     margin: 0;
     font-size: 28px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+    overflow-x: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
   }
   
 .header {
@@ -14,20 +24,51 @@ body {
     height: 100vh;
     background-image: url("Images/pikachu.jpg");
     background-size: 100%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
 
     margin-top: 0;
     color: white;
-    font-family: Walt;
+    font-family: Thumbnail;
 
-    padding: 30px;
+    padding: 10px;
     text-align: center;
+    overflow: hidden;
+}
+
+.header h1{
+  font-size: 8vw;
+  font-weight: 300;
+  font-family: Thumbnail;
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+  padding-top: 10vh;
+}
+
+.header h2{
+    font-size: 50px;
+    font-family: Thumbnail;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+
 }
   
   #navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: rgba(0,0,0,0.6);
+    text-align: center;
   }
   
+  #navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.6);
+    display: inline-block;
+  }
+
   #navbar a {
     float: left;
     display: block;
@@ -39,34 +80,43 @@ body {
   }
   
   #navbar a:hover {
-    background-color: #ddd;
+    background-color: #727272;
     color: black;
+    text-decoration: underline;
   }
   
   #navbar a.active {
-    background-color: #04AA6D;
+    background-color: #5463e754;
     color: white;
+  }
+
+  #navbar a.active:hover {
+    background-color: #727272;
+    color: black;
+    text-decoration: underline;
   }
   
   .content {
+    overflow: hidden;
     padding: 16px;
     background-color: white;
   }
   
   .sticky {
+    overflow: hidden;
     position: fixed;
     top: 0;
     width: 100%;
   }
   
   .sticky + .content {
+    overflow: hidden;
     padding-top: 60px;
   }
 
-  body{background-color:#000; overflow:scroll;}
-
 .scroll-down {
   position: absolute;
+  overflow: hidden;
   left: 50%;
   bottom: 10%;
   display: block;
