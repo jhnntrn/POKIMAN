@@ -1,29 +1,29 @@
 -- create the tables
 CREATE TABLE Types (
-  typeID       INT(16)       NOT NULL   AUTO_INCREMENT,
+  typeID       INT(16)       NOT NULL,
   typeName     VARCHAR(20)   NOT NULL,
   PRIMARY KEY (typeName)
 );
 
 CREATE TABLE Pokedex (
-  id         INT(200)       NOT NULL   AUTO_INCREMENT,
+  id         INT(255)       NOT NULL,
   P_Name     VARCHAR(20)    NOT NULL,
   Form       INT(3)         NULL,
   typeName   VARCHAR(20)    NOT NULL,
   type2      VARCHAR(20)    NULL,
-  stat_total INT(700)       NOT NULL,
-  HP         INT(700)       NOT NULL,
-  Attack     INT(700)       NOT NULL,
-  Defense    INT(700)       NOT NULL,
-  Sp_Attack  INT(700)       NOT NULL,
-  Sp_Defense INT(700)       NOT NULL,
-  Speed      INT(700)       NOT NULL,
+  stat_total INT(255)       NOT NULL,
+  HP         INT(255)       NOT NULL,
+  Attack     INT(255)       NOT NULL,
+  Defense    INT(255)       NOT NULL,
+  Sp_Attack  INT(255)       NOT NULL,
+  Sp_Defense INT(255)       NOT NULL,
+  Speed      INT(255)       NOT NULL,
   Generation INT(10)        NOT NULL,
-  PRIMARY KEY (entryNumber)
+  PRIMARY KEY (id)
 );
 
 -- insert data into the database
-INSERT INTO categories VALUES
+INSERT INTO Types VALUES
 (1, 'Grass'),
 (2, 'Water'),
 (3, 'Fire'),
@@ -40,7 +40,7 @@ INSERT INTO categories VALUES
 (14, 'Ice'),
 (15, 'Dragon');
 
-INSERT INTO products VALUES
+INSERT INTO Pokedex VALUES
 (1,"Bulbasaur"," ","Grass","Poison",318,45,49,49,65,65,45,1),
 (2,"Ivysaur"," ","Grass","Poison",405,60,62,63,80,80,60,1),
 (3,"Venusaur"," ","Grass","Poison",525,80,82,83,100,100,80,1),
