@@ -8,7 +8,7 @@ USE Pokemon_Database;
 
 -- create the tables
 CREATE TABLE Types (
-  typeID       INT(16)       NOT NULL   AUTO_INCREMENT,
+  typeID       INT(16)       NOT NULL,
   typeName     VARCHAR(20)   NOT NULL,
   PRIMARY KEY (typeName)
 );
@@ -27,7 +27,7 @@ CREATE TABLE Pokedex (
   Sp_Defense INT(700)       NOT NULL,
   Speed      INT(700)       NOT NULL,
   Generation INT(10)        NOT NULL,
-  PRIMARY KEY (entryNumber)
+  PRIMARY KEY (id)
 );
 
 -- create the users
