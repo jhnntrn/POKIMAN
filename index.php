@@ -16,8 +16,8 @@
 
     <div id="navbar">
         <a class="active" href="index.php">Home</a>
-        <a href="pokedex.html">Pokédex</a>
-        <a href="explorer.html">Explorer</a>
+        <a href="pokedex.php">Pokédex</a>
+        <a href="explorer.php">Explorer</a>
     </div>
 
     <div class="content">
