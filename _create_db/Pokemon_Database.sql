@@ -23,7 +23,7 @@ CREATE TABLE Pokedex (
 );
 
 -- insert data into the database
-INSERT INTO categories VALUES
+INSERT INTO Types VALUES
 (1, 'Grass'),
 (2, 'Water'),
 (3, 'Fire'),
@@ -40,7 +40,7 @@ INSERT INTO categories VALUES
 (14, 'Ice'),
 (15, 'Dragon');
 
-INSERT INTO products VALUES
+INSERT INTO Pokedex VALUES
 (1,"Bulbasaur"," ","Grass","Poison",318,45,49,49,65,65,45,1),
 (2,"Ivysaur"," ","Grass","Poison",405,60,62,63,80,80,60,1),
 (3,"Venusaur"," ","Grass","Poison",525,80,82,83,100,100,80,1),
