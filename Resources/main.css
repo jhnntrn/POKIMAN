@@ -46,6 +46,11 @@ body {
   padding-top: 10vh;
 }
 
+.header a{
+  text-decoration: none;
+}
+
+
 .header h2{
     font-size: 50px;
     font-family: Thumbnail;
@@ -82,7 +87,6 @@ body {
   #navbar a:hover {
     background-color: #727272;
     color: black;
-    text-decoration: underline;
   }
   
   #navbar a.active {
@@ -93,7 +97,6 @@ body {
   #navbar a.active:hover {
     background-color: #727272;
     color: black;
-    text-decoration: underline;
   }
   
   .content {
