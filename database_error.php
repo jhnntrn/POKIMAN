@@ -2,7 +2,7 @@
 <html>
     <!-- the head section -->
     <head>
-        <title>urPokémon Database</title>
+        <title>Pokedex</title>
         <link rel="stylesheet" href="main.css">
     </head>
 
