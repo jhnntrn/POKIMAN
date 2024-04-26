@@ -23,7 +23,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-image: url("Images/pikachu.jpg");
-    background-size: 100%;
+    background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
@@ -60,9 +60,11 @@ body {
 }
   
   #navbar {
+    width: 100vw;
+    margin:auto;
     overflow: hidden;
     background-color: rgba(0,0,0,0.6);
-    text-align: center;
+    text-align: right;
   }
   
   #navbar ul {
@@ -72,7 +74,14 @@ body {
     overflow: hidden;
     background-color: rgba(0,0,0,0.6);
     display: inline-block;
+    text-align: right;
   }
+
+  #nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+    text-align: right;
+}
 
   #navbar a {
     float: left;
