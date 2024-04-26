@@ -10,4 +10,4 @@
         include('database_error.php');
         exit();
     }
-?>i
+?>
