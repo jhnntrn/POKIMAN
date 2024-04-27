@@ -14,7 +14,7 @@ $statement->closeCursor();
 <!-- the head section -->
 <head>
     <title>Pokédex</title>
-    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="Resources/main.css">
 </head>
 
 <!-- the body section -->
