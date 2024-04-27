@@ -74,6 +74,15 @@ tr:nth-child(even) {
     text-shadow: 2px 2px 4px #000000;
 
 }
+
+.title {
+
+    font-family: Logo;
+}
+
+.small {
+    font-size: smaller;
+}
   
   #navbar {
     width: 100vw;

@@ -17,16 +17,21 @@ $statement->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-    <title>Pokédex</title>
+    <title>Pokédex- Search By Name</title>
     <link rel="stylesheet" type="text/css" href="Resources/main.css">
 </head>
 
 <!-- the body section -->
 <body>
+    <div id="navbar">
+        <a class="active" href="index.php">Home</a>
+        <a href="pokedex.php">Pokédex</a>
+        <a href="explorer.php">Explorer</a>
+    </div>
 <main>
     <section>
         <!-- display a table of all Pokémon -->
-        <h2><?php echo "Pokemon" ?></h2>
+        <h2><?php echo "Pokémon Named $name" ?></h2>
         <table>
             <tr>
                 <th>ID</th>

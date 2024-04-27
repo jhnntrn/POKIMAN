@@ -24,7 +24,7 @@
         <h1>Pokémon Database</h1>
 
         <p>
-            Welcome to the UrPokédex Database!<br>
+            Welcome to the <span class="title"> urPokédex </span> Database!<br>
             Select Pokédex to view a table of each Pokémon's name, statistics and typing.<br>
             Select  to search a Pokémon by name or type<br>
             Select ADD to add a custom Pokémon to the database<br>
