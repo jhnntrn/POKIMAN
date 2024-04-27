@@ -8,6 +8,7 @@ $statement = $db->prepare($queryPokedex);
 $statement->execute();
 $Pokedex = $statement->fetchAll();
 $statement->closeCursor();
+
 ?>
 <!DOCTYPE html>
 <html>
