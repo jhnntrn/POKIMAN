@@ -18,6 +18,22 @@ body {
     display: flex;
     flex-direction: column;
   }
+table {
+   font-family: arial, sans-serif;
+   border-collapse: collapse;
+   width: 100%;
+   color: green;
+}
+
+td, th {
+   border: 0.3em solid black;
+   text-align: center;
+   padding: 1em;
+}
+
+tr:nth-child(even) {
+  background-color: #03143f;
+}
   
 .header {
     width: 100vw;
