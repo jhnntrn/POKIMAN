@@ -43,10 +43,14 @@ body {
   font-family: Thumbnail;
   color: white;
   text-shadow: 2px 2px 4px #000000;
-  padding-top: 10vh;
+  padding-top: 40vh;
 }
 
 .header a{
+  text-decoration: none;
+}
+
+.header a:hover{
   text-decoration: none;
 }
 
@@ -63,8 +67,9 @@ body {
     width: 100vw;
     margin:auto;
     overflow: hidden;
-    background-color: rgba(0,0,0,0.6);
-    text-align: right;
+    background-color: rgba(0,0,0,1);
+    display: flex;  
+    justify-content: center; 
   }
   
   #navbar ul {
@@ -73,14 +78,12 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: rgba(0,0,0,0.6);
-    display: inline-block;
-    text-align: right;
+    display: flex;  
   }
 
   #nav ul li {
     display: inline-block;
     margin-right: 10px;
-    text-align: right;
 }
 
   #navbar a {
@@ -91,38 +94,37 @@ body {
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
+    background-color: rgba(0,0,0,0.6);
   }
   
   #navbar a:hover {
     background-color: #727272;
-    color: black;
+    color: orange;
   }
   
   #navbar a.active {
-    background-color: #5463e754;
+    background-color: #ff8a2354;
     color: white;
   }
 
   #navbar a.active:hover {
     background-color: #727272;
-    color: black;
+    color: orange;
   }
   
   .content {
-    overflow: hidden;
     padding: 16px;
     background-color: white;
   }
   
   .sticky {
-    overflow: hidden;
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 10000;
   }
   
   .sticky + .content {
-    overflow: hidden;
     padding-top: 60px;
   }
 
@@ -149,6 +151,26 @@ body {
   -webkit-animation: fade_move_down 4s ease-in-out infinite;
   -moz-animation:    fade_move_down 4s ease-in-out infinite;
   animation:         fade_move_down 4s ease-in-out infinite;
+}
+
+.footer{
+  height: 10vh;
+  width: 100vw;
+  text-align:  center;
+  background-color: rgba(0,0,0,1);
+  font-size: medium;
+  color: white;
+  margin-top:-10;
+  margin-bottom: -10px;
+  padding-bottom: 5px;
+  padding-top: 3vh;
+}
+
+
+.home{
+  width: 100vw;
+  height: 110vh;
+  display:flex;
 }
 
 
