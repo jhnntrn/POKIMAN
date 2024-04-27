@@ -4,15 +4,6 @@ require_once('database.php');
 $name = $_POST['pName'];
 
 // Get Pokémon of given name
-$queryName = 'SELECT * FROM Pokedex 
-                  WHERE P_Name = :name
-                  ORDER BY id';
-$statement = $db->prepare($queryName);
-$statement->bindValue(':name', $name)
-$statement->execute();
-$Pokedex = $statement->fetchAll();
-$statement->closeCursor();
-
 $queryName = 'SELECT * FROM Pokedex
                   WHERE P_Name = :name
                   ORDER BY id';

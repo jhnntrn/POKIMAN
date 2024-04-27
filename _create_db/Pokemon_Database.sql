@@ -22,6 +22,13 @@ CREATE TABLE Pokedex (
   PRIMARY KEY (id)
 );
 
+CREATE TABLE logbook (
+  user_ID     INT (255)     NOT NULL AUTO_INCREMENT,
+  userName    VARCHAR(30)   NOT NULL,
+  p_Word      VARCHAR(30)   NOT NULL,
+  PRIMARY KEY (user_ID)
+);
+
 -- insert data into the database
 INSERT INTO Types VALUES
 (1, 'Grass'),
