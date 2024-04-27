@@ -10,7 +10,7 @@
 
 <body>
     <div class="header">
-        <a href="index.html"><h1>urPokédex</h1></a>
+        <a href="index.php"><h1>urPokédex</h1></a>
         <div class="scroll-down"></div>
     </div>
 
@@ -24,10 +24,9 @@
         <h1>Pokémon Database</h1>
 
         <p>
-            Welcome to the *TEAMNAME* Pokémon Database!<br>
-            Select MAIN to view a table of each Pokémon's name, statistics and typing.<br>
-            Select NAME SEARCH to search a Pokémon by name<br>
-            Select TYPE SEARCH to search a Pokémon by type<br>
+            Welcome to the UrPokédex Database!<br>
+            Select Pokédex to view a table of each Pokémon's name, statistics and typing.<br>
+            Select  to search a Pokémon by name or type<br>
             Select ADD to add a custom Pokémon to the database<br>
         </p>
     </div>
