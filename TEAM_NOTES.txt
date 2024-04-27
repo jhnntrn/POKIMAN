@@ -4,8 +4,8 @@ Intended features:
    Search Pokémon by name
    Search Pokémon by type
    Add a Pokémon to the database
-   Visitor logbook (Local database of names and comments- should probably display in the following form or similar rather than as a table:
+   Visitor logbook: Local database of names and comments- should probably display in the following form or similar rather than as a table:
       <strong>[NAME]</strong>
       [COMMENT]
       <br><br>
-
+Pokémon database is stored on abreshea account, visitor logbook is stored on ccaldwell account

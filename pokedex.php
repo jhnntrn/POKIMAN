@@ -19,6 +19,11 @@ $statement->closeCursor();
 
 <!-- the body section -->
 <body>
+    <div id="navbar">
+        <a class="active" href="index.php">Home</a>
+        <a href="pokedex.php">Pokédex</a>
+        <a href="explorer.php">Explorer</a>
+    </div>
 <main>
 
     <section>

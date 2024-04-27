@@ -23,10 +23,15 @@ $statement->closeCursor();
 
 <!-- the body section -->
 <body>
+    <div id="navbar">
+        <a class="active" href="index.php">Home</a>
+        <a href="pokedex.php">Pokédex</a>
+        <a href="explorer.php">Explorer</a>
+    </div>
 <main>
     <section>
         <!-- display a table of all Pokémon -->
-        <h2><?php echo "Pokemon" ?></h2>
+        <h2><?php echo "Pokémon of $type Type" ?></h2>
         <table>
             <tr>
                 <th>ID</th>
