@@ -12,8 +12,11 @@ $statement->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-    <title>Pokédex Users</title>
+    <title>urPokédex - Logbook</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Resources/pokedex.css">
+    <link rel="icon" href="Resources/Images/pokeball.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <!-- the body section -->
@@ -32,6 +35,7 @@ $statement->closeCursor();
 
     <section>
         <!-- display a table of all Users -->
+    <div class="content" style="overflow-x:auto;">
         <h2>Logbook</h2>
         <table>
             <tr>
@@ -46,9 +50,45 @@ $statement->closeCursor();
             </tr>
             <?php endforeach; ?>
         </table>
+    </div>
     </section>
+    
+    <div class="footer">
+        <p>&copy;<?php echo date("Y"); ?> Aidan Breshears, Chase Caldwell, and Tri Tran</p>
+    </div>
+
+    <script>
+        let mybutton = document.getElementById("myBtn");
+        window.onscroll = function() {
+            myFunction();
+            scrollFunction();
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky");
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
 </main>
-<footer></footer>
 </body>
 </html>
 

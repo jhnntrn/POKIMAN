@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -35,6 +36,10 @@
       </div>
       </form>
    </main>
+   
+   <div class="footer">
+     <p>&copy;<?php echo date("Y"); ?> Aidan Breshears, Chase Caldwell, and Tri Tran</p>
+   </div>
 </body>
 
 </html> 
