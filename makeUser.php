@@ -1,5 +1,5 @@
 <?php
-$username = filter_input(INPUT_POST, 'uName');
+$uName = filter_input(INPUT_POST, 'uName');
 $pword = filter_input(INPUT_POST, 'pWord');
 
 //Validate inputs
