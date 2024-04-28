@@ -5,7 +5,7 @@ $pword = filter_input(INPUT_POST, 'pWord');
 //Validate inputs
 if ($username == null || $pword == null) {
     $error ="Invalid username or password";
-    include('error.php');
+    include('database_error.php');
 } else {
     require_once('users_database.php');
 // Create account
