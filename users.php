@@ -3,10 +3,10 @@ require_once('database.php');
 //Display Users
 $query = 'SELECT * FROM logbook
           ORDER BY user_ID';
-$statement2 = $db->prepare($query);
-$statement2->execute();
-$users = $statement2->fetchAll();
-$statement2->closeCursor();
+$statement = $db->prepare($query);
+$statement->execute();
+$users = $statement->fetchAll();
+$statement->closeCursor();
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,10 +39,10 @@ $statement2->closeCursor();
                 <th>User Name</th>
             </tr>
 
-            <?php foreach ($users as $pokemon) : ?>
+            <?php foreach ($users as $user) : ?>
             <tr>
-                <td><?php echo $pokemon['user_ID']; ?></td>
-                <td><?php echo $pokemon['userName']; ?></td>
+                <td><?php echo $user['user_ID']; ?></td>
+                <td><?php echo $user['userName']; ?></td>
             </tr>
             <?php endforeach; ?>
         </table>
