@@ -13,7 +13,7 @@ $statement->closeCursor();
 <!-- the head section -->
 <head>
     <title>Pokédex Users</title>
-    <link rel="stylesheet" type="text/css" href="Resources/main.css">
+    <link rel="stylesheet" type="text/css" href="Resources/pokedex.css">
 </head>
 
 <!-- the body section -->
