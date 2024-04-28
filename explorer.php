@@ -3,11 +3,11 @@
 
 <head>
    <title>Search Database</title>
-   <link rel="stylesheet" type="text/css" href="Resources/main.css">
+   <link rel="stylesheet" type="text/css" href="Resources/dark.css">
 </head>
 
 <body>
-   <div id="navbar">
+    <div id="navbar">
         <div class="logo">urPokédex</div>
         <ul>
             <li><a href="index.php">Home</a></li>

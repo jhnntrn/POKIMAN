@@ -3,7 +3,7 @@
 
 <head>
    <title>Make Account</title>
-   <link rel="stylesheet" type="text/css" href="Resources/main.css">
+   <link rel="stylesheet" type="text/css" href="Resources/dark.css">
 </head>
 
 <body>

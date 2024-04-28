@@ -42,26 +42,29 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
+                    <a href ="pokedex.php">
                     <img src="Resources/Images/carousel1.jpeg" alt="Pikachu" style="width:100vw;height: 100vh;">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Hi?</h1>
-                        <p>...</p>
+                        <h1>Pokédex</h1>
+                        <p>...</p></a>
                     </div>
                 </div>
 
                 <div class="item">
+                    <a href ="explorer.php">
                     <img src="Resources/Images/carousel2.png" alt="Another Pikachu" style="width:100vw;height:100vh;">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Hi?</h1>
-                        <p>...</p>
+                        <h1>Search</h1>
+                        <p>...</p></a>
                     </div>
                 </div>
 
                 <div class="item">
+                    <a href ="users.php">
                     <img src="Resources/Images/carousel3.png" alt="One more Pikachu" style="width:100vw;height:100vh;">
                     <div class="carousel-caption d-none d-md-block">
-                        <h1>Hi?</h1>
-                        <p>...</p>
+                        <h1>Logbook</h1>
+                        <p>...</p></a>
                     </div>
                 </div>
             </div>
