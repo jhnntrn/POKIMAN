@@ -12,7 +12,7 @@ if ($username == null || $pword == null) {
 $makeAccount = 'INSERT INTO logbook
                   (userName, p_Word)
                 VALUES
-                  (:username, :pword)';
+                  (:uName, :pword)';
 $statement = $db->prepare($makeAccount);
 $statement->bindValue(':username', $username);
 $statement->bindValue(':pword', $pword);
