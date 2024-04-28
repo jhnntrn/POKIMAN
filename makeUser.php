@@ -7,7 +7,7 @@ if ($username == null || $pword == null) {
     $error ="Invalid username or password";
     include('database_error.php');
 } else {
-    require_once('users_database.php');
+    require_once('database.php');
 // Create account
 $makeAccount = 'INSERT INTO logbook
                   (userName, p_Word)

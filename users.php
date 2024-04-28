@@ -1,5 +1,5 @@
 <?php
-require_once('users_database.php');
+require_once('database.php');
 //Display Users
 $query = 'SELECT * FROM logbook
           ORDER BY user_ID';
