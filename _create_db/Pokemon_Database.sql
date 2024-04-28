@@ -6,11 +6,7 @@ CREATE TABLE Types (
 );
 
 CREATE TABLE Pokedex (
-<<<<<<< Updated upstream
   id         INT(255)       NOT NULL,
-=======
-  id         INT(200)       NOT NULL,
->>>>>>> Stashed changes
   P_Name     VARCHAR(20)    NOT NULL,
   Form       INT(3)         NULL,
   typeName   VARCHAR(20)    NOT NULL,
