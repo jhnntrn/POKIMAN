@@ -39,7 +39,7 @@ $statement2->closeCursor();
                 <th>User Name</th>
             </tr>
 
-            <?php foreach ($Users as $pokemon) : ?>
+            <?php foreach ($users as $pokemon) : ?>
             <tr>
                 <td><?php echo $pokemon['user_ID']; ?></td>
                 <td><?php echo $pokemon['userName']; ?></td>
