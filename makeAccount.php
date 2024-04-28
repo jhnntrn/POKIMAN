@@ -21,10 +21,10 @@
 
       <div id="data">
          <label>User Name</label><br>
-         <input type="text" name="uName" value="Bulbasaur">
+         <input type="text" name="uName" value="">
 
          <label>Password</label><br>
-         <input type="text" name="pWord" value="Bulbasaur">
+         <input type="text" name="pWord" value="">
       </div>
 
       <div id="buttons">

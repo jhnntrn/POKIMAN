@@ -3,7 +3,7 @@ $username = filter_input(INPUT_POST, 'uName');
 $pword = filter_input(INPUT_POST, 'pWord');
 
 //Validate inputs
-if ($username == null || $password == null) {
+if ($username == null || $pword == null) {
     $error ="Invalid username or password";
     include('error.php');
 } else {
