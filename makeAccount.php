@@ -25,7 +25,7 @@
 
       <div id="data">
          <label>User Name</label><br>
-         <input type="text" name="uName" value="">
+         <input type="text" name="uName" value=""><br>
 
          <label>Password</label><br>
          <input type="text" name="pWord" value="">
