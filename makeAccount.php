@@ -7,8 +7,16 @@
 </head>
 
 <body>
+   <div id="navbar">
+        <a class="active" href="index.php">Home</a>
+        <a href="pokedex.php">Pokédex</a>
+        <a href="explorer.php">Explorer</a>
+        <a href="makeAccount.php">Make an Account</a>
+        <a href="users.php">Logbook</a>
+    </div>
    <main>
       <h1>Create an account</h1>
+
       <form action="makeUser.php" method="post">
 
       <div id="data">

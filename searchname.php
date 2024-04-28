@@ -27,6 +27,8 @@ $statement->closeCursor();
         <a class="active" href="index.php">Home</a>
         <a href="pokedex.php">Pokédex</a>
         <a href="explorer.php">Explorer</a>
+        <a href="makeAccount.php">Make an Account</a>
+        <a href="users.php">Logbook</a>
     </div>
 <main>
     <section>
