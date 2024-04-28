@@ -12,12 +12,15 @@
 </head>
 
 <body>
-    <div class="header">
-        <a href="index.html"><h1>urPokédex</h1></a>
-        <div class="scroll-down"></div>
+    <div class="header" id="header">
+        <a href="index.php">
+            <h1>urPokédex</h1>
+        </a>
+        <a href="#home"><div class="scroll-down"></div></a>
     </div>
 
     <div id="navbar">
+        <div class="logo">urPokédex</div>
         <ul>
             <li><a class="active" href="index.php">Home</a></li>
             <li><a href="pokedex.php">Pokédex</a></li>
@@ -25,7 +28,7 @@
         </ul>
     </div>
 
-    <div class="home">
+    <div class="content" id="home">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -37,16 +40,27 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <img src="Resources/Images/pikachu.jpg" alt="Los Angeles" style="width:100vw;height:110vh;">
-                    <p>THIS GONNA BE FUN</p>
+                    <img src="Resources/Images/carousel1.jpeg" alt="Pikachu" style="width:100vw;height: 100vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Hi?</h1>
+                        <p>...</p>
+                    </div>
                 </div>
 
                 <div class="item">
-                    <img src="Resources/Images/pikachu.jpg" alt="Chicago" style="width:100vw;height:110vh;">
+                    <img src="Resources/Images/carousel2.png" alt="Another Pikachu" style="width:100vw;height:100vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Hi?</h1>
+                        <p>...</p>
+                    </div>
                 </div>
 
                 <div class="item">
-                    <img src="Resources/Images/pikachu.jpg" alt="New york" style="width:100vw;height:110vh;">
+                    <img src="Resources/Images/carousel3.png" alt="One more Pikachu" style="width:100vw;height:100vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Hi?</h1>
+                        <p>...</p>
+                    </div>
                 </div>
             </div>
 
