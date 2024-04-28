@@ -3,7 +3,7 @@ $uName = filter_input(INPUT_POST, 'uName');
 $pword = filter_input(INPUT_POST, 'pWord');
 
 //Validate inputs
-if ($username == null || $pword == null) {
+if ($uName == null || $pword == null) {
     $error ="Invalid username or password";
     include('database_error.php');
 } else {
@@ -14,7 +14,7 @@ $makeAccount = 'INSERT INTO logbook
                 VALUES
                   (:uName, :pword)';
 $statement = $db->prepare($makeAccount);
-$statement->bindValue(':username', $username);
+$statement->bindValue(':uName', $uName);
 $statement->bindValue(':pword', $pword);
 $statement->execute();
 $statement->closeCursor();
