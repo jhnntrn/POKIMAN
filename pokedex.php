@@ -14,7 +14,7 @@ $statement->closeCursor();
 <head>
     <title>urPokédex - Pokédex</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Resources/pokedex.css">
+    <link rel="stylesheet" type="text/css" href="Resources/main.css">
     <link rel="icon" href="Resources/Images/pokeball.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -50,13 +50,14 @@ $statement->closeCursor();
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
                     </li>
                     <li>
-                        <input type="submit">
+                        <input type="submit" value=" ">
                     </li>
                 </ul>
             </form>
         </div>
+        
         <div class="logo"><h1>Pokémon</h1></div><br>
-        <table class="table table-hover bootstrap-table-sticky-header">
+        <table class="table table-hover sticky-header">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -100,13 +101,11 @@ $statement->closeCursor();
         let mybutton = document.getElementById("myBtn");
         window.onscroll = function() {
             stickyNav();
-            stickyRow();
             scrollFunction();
         };
 
         var navbar = document.getElementById("navbar");
         var sticky_nav = navbar.offsetTop;
-
 
         function stickyNav() {
             if (window.pageYOffset >= sticky_nav) {

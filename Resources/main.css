@@ -28,8 +28,10 @@ td, th {
 
 table th {
   text-align: center !important;
-  background-color: rgba(0, 0, 0, 1);
+  background-color: #ff8a23;
   width: auto !important;
+  position: sticky;
+  top: 50px;
 }
 
 .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
@@ -110,6 +112,7 @@ body {
   display: flex;
   justify-content: space-between; /* Separates the logo and ul list */
   align-items: center; /* Aligns elements vertically */
+  position:sticky;
 }
 
 #navbar ul {
@@ -153,18 +156,6 @@ body {
   color: orange;
 }
 
-.searchbar {
-  width: 40%;
-  margin: auto;
-}
-
-.searchbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-}
-
 .logo{
   color:orange;
   font-family: Logo;
@@ -185,8 +176,83 @@ body {
   padding-top: 60px;
 }
 
-.sticky + .carousel {
-  padding-top: 60px;
+
+.searchbar {
+  width: 60%;
+  margin: auto;
+  color:black;
+  padding-bottom:6vh;
+}
+
+.searchbar ul {
+  list-style-type: none;
+  margin: 1px;
+  padding: 0;
+  display: inline-flex;
+}
+
+.searchbar ul li {
+  display: inline-block;
+}
+
+.searchbar input[type=text]{
+  width: 30vw;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  border-left: none;
+  border-right: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+  
+.searchbar input[type=text]:focus {
+  border-top: 3px solid #555;
+  border-bottom: 3px solid #555;
+}
+
+.searchbar input[type=text]:focus ~ .searchbar input[type="submit"] {
+  border: 3px solid #555;
+}
+
+.searchbar input[type=text]:hover {
+  border-top: 3px solid #555;
+  border-bottom: 3px solid #555;
+}
+
+.searchbar input[type=submit]{
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+  border-left: none;
+  background-color: white;
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  border-right: 3px solid #ccc;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  background-image: url("Images/searchicon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.searchbar select{
+  height:50px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  outline: none;
+  border-right: none;
+  background-color: white;
+  border-top: 3px solid #ccc;
+  border-bottom: 3px solid #ccc;
+  border-left: 3px solid #ccc;
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
 }
 
 .scroll-down {
@@ -208,19 +274,6 @@ body {
   animation: fade_move_down 4s ease-in-out infinite;
 }
 
-.footer {
-  height: 8vh;
-  width: 100vw;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 1);
-  font-size: medium;
-  color: white;
-  margin-top: -2px;
-  margin-bottom: -10px;
-  padding-bottom: 5px;
-  padding-top: 2.5vh;
-}
-
 .content {
   width: 100vw;
   min-height: 100vh;
@@ -233,6 +286,20 @@ body {
   padding-bottom: 10vh;
   color: white;
   text-align: center;
+}
+
+
+.footer {
+  height: 8vh;
+  width: 100vw;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 1);
+  font-size: medium;
+  color: white;
+  margin-top: -2px;
+  margin-bottom: -10px;
+  padding-bottom: 5px;
+  padding-top: 2.5vh;
 }
 
 .carousel {
@@ -270,24 +337,6 @@ body {
 
 #myBtn:hover {
   background-color: #555;
-}
-
-.searchbar {
-  width: 40%;
-  margin: auto;
-  color:black;
-  padding-bottom:6vh;
-}
-
-.searchbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  display: inline-flex;
-}
-
-.searchbar ul li {
-  display: inline-block;
 }
 
 @keyframes fade_move_down {

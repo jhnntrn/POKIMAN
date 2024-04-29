@@ -81,7 +81,7 @@ switch ($option) {
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
                     </li>
                     <li>
-                        <input type="submit">
+                        <input type="submit" value=" ">
                     </li>
                 </ul>
             </form>
@@ -131,7 +131,6 @@ switch ($option) {
         let mybutton = document.getElementById("myBtn");
         window.onscroll = function() {
             stickyNav();
-            stickyRow();
             scrollFunction();
         };
 
