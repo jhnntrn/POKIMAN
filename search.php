@@ -1,12 +1,43 @@
 <?php
 require_once('database.php');
 
-// Get all Pokémon
-$queryPokedex = 'SELECT * FROM Pokedex ORDER BY id';
-$statement = $db->prepare($queryPokedex);
-$statement->execute();
-$Pokedex = $statement->fetchAll();
-$statement->closeCursor();
+$option = htmlspecialchars($_POST['function']);
+$input = htmlspecialchars($_POST['userinput']);
+if($input==null)
+{
+    $option = null;
+}
+switch ($option) {
+    case '0':
+        // Get Pokémon of given name
+        $queryName = 'SELECT * FROM Pokedex
+                      WHERE P_Name = :name
+                      ORDER BY id';
+        $statement = $db->prepare($queryName);
+        $statement->bindValue(':name', $input);
+        $statement->execute();
+        $Pokedex = $statement->fetchAll();
+        $statement->closeCursor();
+        break;
+    case '1':
+        // Get Pokémon of given Type
+        $queryType = 'SELECT * FROM Pokedex
+                      WHERE typeName = :type OR type2 = :type
+                      ORDER BY id';
+        $statement = $db->prepare($queryType);
+        $statement->bindValue(':type', $input);
+        $statement->execute();
+        $Pokedex = $statement->fetchAll();
+        $statement->closeCursor();
+        break;
+    case null:
+        $queryPokedex = 'SELECT * FROM Pokedex ORDER BY id';
+        $statement = $db->prepare($queryPokedex);
+        $statement->execute();
+        $Pokedex = $statement->fetchAll();
+        $statement->closeCursor();
+        break;
+}
 ?>
 
 <!DOCTYPE html>
@@ -14,7 +45,7 @@ $statement->closeCursor();
 <head>
     <title>urPokédex - Pokédex</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Resources/pokedex.css">
+    <link rel="stylesheet" type="text/css" href="Resources/main.css">
     <link rel="icon" href="Resources/Images/pokeball.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -106,7 +137,6 @@ $statement->closeCursor();
 
         var navbar = document.getElementById("navbar");
         var sticky_nav = navbar.offsetTop;
-
 
         function stickyNav() {
             if (window.pageYOffset >= sticky_nav) {
