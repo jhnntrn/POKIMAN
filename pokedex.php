@@ -8,12 +8,13 @@ if (!isset($_SESSION["order"]))
   $_SESSION["order"] = array("col" => false, "dir" => false);
 // set defaults
 $dir = 0;
-$col = "column1";
+$col = "id"; // Default sorting column
 $orderBy = array("id", "P_Name", "TypeName", "HP", "Attack", "Defense", "Sp_Attack", "Sp_Defense", "Speed", "stat_total");
 $orderDir = array("DESC", "ASC");
-// check $_GET data
-if (isset($_POST["orderBy"]) && in_array($_POST["orderBy"], $orderBy)) {
-  $col = $_POST["orderBy"];
+
+// check if sorting column is set in URL
+if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
+  $col = $_GET["orderBy"];
 }
 // check if same col is clicked as last time
 // if it is the same => change the order, if not => use default
@@ -41,7 +42,7 @@ $statement->closeCursor();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>urPokédex - Pokédex</title>
+    <title>urPokedex - Pokedex</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Resources/main.css">
     <link rel="icon" href="Resources/Images/pokeball.png">
@@ -52,10 +53,10 @@ $statement->closeCursor();
 </head>
 <body>
     <div id="navbar">
-        <div class="logo">urPokédex</div>
+        <div class="logo">urPokedex</div>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a class="active" href="pokedex.php">Pokédex</a></li>
+            <li><a class="active" href="pokedex.php">Pokedex</a></li>
             <li><a href="makeAccount.php">Make an Account</a></li>
             <li><a href="users.php">Logbook</a></li>
         </ul>
@@ -85,21 +86,21 @@ $statement->closeCursor();
             </form>
         </div>
         
-        <div class="logo"><h1>Pokémon</h1></div><br>
+        <div class="logo"><h1>Pokemon</h1></div><br>
         <table class="table table-hover sticky-header">
             <thead>
                 <tr>
-                    <th><a href="?orderBy=id">ID</th>
-                    <th><a href="?orderBy=P_Name">Name</th>
-                    <th><a href="?orderBy=TypeName">Type 1</th>
+                    <th><a href="?orderBy=id">ID</a></th>
+                    <th><a href="?orderBy=P_Name">Name</a></th>
+                    <th><a href="?orderBy=TypeName">Type 1</a></th>
                     <th>Type 2</th>
-                    <th><a href="?orderBy=HP">HP</th>
-                    <th><a href="?orderBy=Attack">Attack</th>
-                    <th><a href="?orderBy=Defense">Defense</th>
-                    <th><a href="?orderBy=Sp_Attack">Sp. Attack</th>
-                    <th><a href="?orderBy=Sp_Defense">Sp. Defense</th>
-                    <th><a href="?orderBy=Speed">Speed</th>
-                    <th class="right"><a href="?orderBy=stat_total">Stat Total</th>
+                    <th><a href="?orderBy=HP">HP</a></th>
+                    <th><a href="?orderBy=Attack">Attack</a></th>
+                    <th><a href="?orderBy=Defense">Defense</a></th>
+                    <th><a href="?orderBy=Sp_Attack">Sp. Attack</a></th>
+                    <th><a href="?orderBy=Sp_Defense">Sp. Defense</a></th>
+                    <th><a href="?orderBy=Speed">Speed</a></th>
+                    <th class="right"><a href="?orderBy=stat_total">Stat Total</a></th>
                 </tr>
             </thead>
             <tbody>
