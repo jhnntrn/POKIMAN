@@ -89,17 +89,17 @@ $statement->closeCursor();
         <table class="table table-hover sticky-header">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Type 1</th>
+                    <th><a href="?orderBy=id">ID</th>
+                    <th><a href="?orderBy=P_Name">Name</th>
+                    <th><a href="?orderBy=TypeName">Type 1</th>
                     <th>Type 2</th>
-                    <th>HP</th>
-                    <th>Attack</th>
-                    <th>Defense</th>
-                    <th>Sp. Attack</th>
-                    <th>Sp. Defense</th>
-                    <th>Speed</th>
-                    <th class="right">Stat Total</th>
+                    <th><a href="?orderBy=HP">HP</th>
+                    <th><a href="?orderBy=Attack">Attack</th>
+                    <th><a href="?orderBy=Defense">Defense</th>
+                    <th><a href="?orderBy=Sp_Attack">Sp. Attack</th>
+                    <th><a href="?orderBy=Sp_Defense">Sp. Defense</th>
+                    <th><a href="?orderBy=Speed">Speed</th>
+                    <th class="right"><a href="?orderBy=stat_total">Stat Total</th>
                 </tr>
             </thead>
             <tbody>
