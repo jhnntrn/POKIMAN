@@ -27,11 +27,6 @@ $_SESSION["order"]["dir"] = $dir;
 // set the order
 $sort = $orderDir[$dir];
 // set the correct query
-$query = "SELECT * FROM Pokedex ORDER BY $col $sort";
-$statementS = $db->prepare($query);
-$statementS->execute();
-$Pokedex = $statementS->fetchAll();
-$statementS->closeCursor();
 //End of the sorting stuff
 
 $option = htmlspecialchars($_POST['function']);
@@ -64,10 +59,10 @@ switch ($option) {
         $statement->closeCursor();
         break;
     case null:
-        $queryPokedex = 'SELECT * FROM Pokedex ORDER BY id';
-        $statement = $db->prepare($queryPokedex);
-        $statement->execute();
-        $Pokedex = $statement->fetchAll();
+        $query = 'SELECT * FROM Pokedex ORDER BY $col $sort';
+        $statementS = $db->prepare($query);
+        $statementS->execute();
+        $Pokedex = $statementS->fetchAll();
         $statement->closeCursor();
         break;
 }

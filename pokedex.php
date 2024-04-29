@@ -27,7 +27,7 @@ $_SESSION["order"]["dir"] = $dir;
 // set the order
 $sort = $orderDir[$dir];
 // set the correct query
-$query = "SELECT * FROM Pokedex ORDER BY $col $sort";
+$query = 'SELECT * FROM Pokedex ORDER BY $col $sort';
 $statementS = $db->prepare($query);
 $statementS->execute();
 $Pokedex = $statementS->fetchAll();
