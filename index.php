@@ -24,13 +24,12 @@
         <ul>
             <li><a class="active" href="index.php">Home</a></li>
             <li><a href="pokedex.php">Pokédex</a></li>
-            <li><a href="explorer.php">Explorer</a></li>
             <li><a href="makeAccount.php">Make an Account</a></li>
             <li><a href="users.php">Logbook</a></li>
         </ul>
     </div>
 
-    <div class="content" id="home">
+    <div class="carousel" id="home">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -85,12 +84,12 @@
     </div>
 
     <script>
-        window.onscroll = function() {myFunction()};
+        window.onscroll = function() {stickyNav()};
 
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop;
 
-        function myFunction() {
+        function stickyNav() {
             if (window.pageYOffset >= sticky) {
                 navbar.classList.add("sticky")
             } else {
