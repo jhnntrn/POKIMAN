@@ -59,10 +59,13 @@ switch ($option) {
         $statement->closeCursor();
         break;
     case null:
-        $query = 'SELECT * FROM Pokedex ORDER BY $col $sort';
-        $statementS = $db->prepare($query);
-        $statementS->execute();
-        $Pokedex = $statementS->fetchAll();
+        $query = 'SELECT * FROM Pokedex 
+                  ORDER BY :col :sort';
+        $statement = $db->prepare($query);
+        $statement->bindValue(':col', $col);
+        $statement->bindValue(':sort', $sort);
+        $statement->execute();
+        $Pokedex = $statement->fetchAll();
         $statement->closeCursor();
         break;
 }
