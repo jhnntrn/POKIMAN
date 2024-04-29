@@ -42,7 +42,7 @@ $statement->closeCursor();
 <!DOCTYPE html>
 <html>
 <head>
-    <title>urPokedex - Pokedex</title>
+    <title>urPokédex - Pokédex</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Resources/main.css">
     <link rel="icon" href="Resources/Images/pokeball.png">
@@ -53,10 +53,10 @@ $statement->closeCursor();
 </head>
 <body>
     <div id="navbar">
-        <div class="logo">urPokedex</div>
+        <div class="logo">urPokédex</div>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a class="active" href="pokedex.php">Pokedex</a></li>
+            <li><a class="active" href="pokedex.php">Pokédex</a></li>
             <li><a href="makeAccount.php">Make an Account</a></li>
             <li><a href="users.php">Logbook</a></li>
         </ul>
@@ -86,7 +86,7 @@ $statement->closeCursor();
             </form>
         </div>
         
-        <div class="logo"><h1>Pokemon</h1></div><br>
+        <div class="logo"><h1>Pokémon</h1></div><br>
         <table class="table table-hover sticky-header">
             <thead>
                 <tr>

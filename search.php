@@ -30,12 +30,9 @@ $sort = $orderDir[$dir];
 // set the correct query
 //End of the sorting stuff
 
-$option = htmlspecialchars($_POST['function']);
-$input = htmlspecialchars($_POST['userinput']);
-if($input==null)
-{
-    $option = null;
-}
+$option = isset($_POST['function']) ? htmlspecialchars($_POST['function']) : null;
+$input = isset($_POST['userinput']) ? htmlspecialchars($_POST['userinput']) : null;
+
 switch ($option) {
     case '0':
         // Get Pokémon of given name
