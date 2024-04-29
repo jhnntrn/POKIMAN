@@ -27,18 +27,16 @@ $_SESSION["order"]["dir"] = $dir;
 // set the order
 $sort = $orderDir[$dir];
 // set the correct query
+$query = "SELECT * FROM Pokedex 
+          ORDER BY $col $sort";
 //End of the sorting stuff
 
-// Get all Pokémon
-$query = 'SELECT * FROM Pokedex 
-          ORDER BY :col :sort';
 $statement = $db->prepare($query);
-$statement->bindValue(':col', $col);
-$statement->bindValue(':sort', $sort);
 $statement->execute();
 $Pokedex = $statement->fetchAll();
 $statement->closeCursor();
 ?>
+
 
 <!DOCTYPE html>
 <html>
