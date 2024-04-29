@@ -1,6 +1,35 @@
 <?php
 require_once('database.php');
 
+// The Sorting stuff, start
+// the very top of the page: start a session to remember the previous options
+session_start();
+if (!isset($_SESSION["order"]))
+  $_SESSION["order"] = array("col" => false, "dir" => false);
+// set defaults
+$dir = 0;
+$col = "column1";
+$orderBy = array("id", "P_Name", "TypeName", "HP", "Attack", "Defense", "Sp_Attack", "Sp_Defense", "Speed", "stat_total");
+$orderDir = array("DESC", "ASC");
+// check $_GET data
+if (isset($_POST["orderBy"]) && in_array($_POST["orderBy"], $orderBy)) {
+  $col = $_POST["orderBy"];
+}
+// check if same col is clicked as last time
+// if it is the same => change the order, if not => use default
+if ($_SESSION["order"]["col"] == $col) {
+  // 1 becomes 0, 0 becomes 1
+  $dir = 1 - $_SESSION["order"]["dir"];
+}
+// remember current options
+$_SESSION["order"]["col"] = $col;
+$_SESSION["order"]["dir"] = $dir;
+// set the order
+$sort = $orderDir[$dir];
+// set the correct query
+$query = "SELECT * FROM Pokedex ORDER BY $col $sort";
+//End of the sorting stuff
+
 $option = htmlspecialchars($_POST['function']);
 $input = htmlspecialchars($_POST['userinput']);
 if($input==null)
@@ -90,17 +119,17 @@ switch ($option) {
         <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Type 1</th>
+                    <th><a href="?orderBy=id">ID</th>
+                    <th><a href="?orderBy=P_Name">Name</th>
+                    <th><a href="?orderBy=TypeName">Type 1</th>
                     <th>Type 2</th>
-                    <th>HP</th>
-                    <th>Attack</th>
-                    <th>Defense</th>
-                    <th>Sp. Attack</th>
-                    <th>Sp. Defense</th>
-                    <th>Speed</th>
-                    <th class="right">Stat Total</th>
+                    <th><a href="?orderBy=HP">HP</th>
+                    <th><a href="?orderBy=Attack">Attack</th>
+                    <th><a href="?orderBy=Defense">Defense</th>
+                    <th><a href="?orderBy=Sp_Attack">Sp. Attack</th>
+                    <th><a href="?orderBy=Sp_Defense">Sp. Defense</th>
+                    <th><a href="?orderBy=Speed">Speed</th>
+                    <th class="right"><a href="?orderBy=stat_total">Stat Total</th>
                 </tr>
             </thead>
             <tbody>
