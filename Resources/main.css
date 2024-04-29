@@ -185,6 +185,10 @@ body {
   padding-top: 60px;
 }
 
+.sticky + .carousel {
+  padding-top: 60px;
+}
+
 .scroll-down {
   position: absolute;
   left: 50%;
