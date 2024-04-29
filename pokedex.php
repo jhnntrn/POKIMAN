@@ -1,9 +1,9 @@
 <?php
+session_start();
 require_once('database.php');
 
 // The Sorting stuff, start
 // the very top of the page: start a session to remember the previous options
-session_start();
 if (!isset($_SESSION["order"]))
   $_SESSION["order"] = array("col" => false, "dir" => false);
 // set defaults
@@ -28,6 +28,10 @@ $_SESSION["order"]["dir"] = $dir;
 $sort = $orderDir[$dir];
 // set the correct query
 $query = "SELECT * FROM Pokedex ORDER BY $col $sort";
+$statementS = $db->prepare($query);
+$statementS->execute();
+$Pokedex = $statementS->fetchAll();
+$statementS->closeCursor();
 //End of the sorting stuff
 
 // Get all Pokémon
