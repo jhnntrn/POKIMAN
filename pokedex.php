@@ -12,8 +12,8 @@ $col = "column1";
 $orderBy = array("id", "P_Name", "TypeName", "HP", "Attack", "Defense", "Sp_Attack", "Sp_Defense", "Speed", "stat_total");
 $orderDir = array("DESC", "ASC");
 // check $_GET data
-if (isset($_POST["orderBy"]) && in_array($_POST["orderBy"], $orderBy)) {
-  $col = $_POST["orderBy"];
+if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
+  $col = $_GET["orderBy"];
 }
 // check if same col is clicked as last time
 // if it is the same => change the order, if not => use default
