@@ -1,44 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>urPokédex</title>
+    <title>urPokédex - Home</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="Resources/main.css">
     <link rel="icon" href="Resources/Images/pokeball.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <div class="header">
-        <a href="index.html"><h1>urPokédex</h1></a>
-        <div class="scroll-down"></div>
+    <div class="header" id="header">
+        <a href="index.php">
+            <h1>urPokédex</h1>
+        </a>
+        <a href="#home"><div class="scroll-down"></div></a>
     </div>
 
     <div id="navbar">
-        <a class="active" href="index.php">Home</a>
-        <a href="pokedex.html">Pokédex</a>
-        <a href="explorer.html">Explorer</a>
+        <div class="logo">urPokédex</div>
+        <ul>
+            <li><a class="active" href="index.php">Home</a></li>
+            <li><a href="pokedex.php">Pokédex</a></li>
+            <li><a href="makeAccount.php">Make an Account</a></li>
+            <li><a href="users.php">Logbook</a></li>
+        </ul>
     </div>
 
-    <div class="content">
-        <h1>Pokémon Database</h1>
+    <div class="carousel" id="home">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2"></li>
+            </ol>
 
-        <p>
-            Welcome to the *TEAMNAME* Pokémon Database!<br>
-            Select MAIN to view a table of each Pokémon's name, statistics and typing.<br>
-            Select NAME SEARCH to search a Pokémon by name<br>
-            Select TYPE SEARCH to search a Pokémon by type<br>
-            Select ADD to add a custom Pokémon to the database<br>
-        </p>
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <a href ="pokedex.php">
+                    <img src="Resources/Images/carousel1.jpeg" alt="Pikachu" style="width:100vw;height: 100vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Pokédex</h1>
+                        <p>...</p></a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a href ="explorer.php">
+                    <img src="Resources/Images/carousel2.png" alt="Another Pikachu" style="width:100vw;height:100vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Search</h1>
+                        <p>...</p></a>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <a href ="users.php">
+                    <img src="Resources/Images/carousel3.png" alt="One more Pikachu" style="width:100vw;height:100vh;">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>Logbook</h1>
+                        <p>...</p></a>
+                    </div>
+                </div>
+            </div>
+
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>&copy;<?php echo date("Y"); ?> Aidan Breshears, Chase Caldwell and Tri Tran </p>
     </div>
 
     <script>
-        window.onscroll = function() {myFunction()};
+        window.onscroll = function() {stickyNav()};
 
         var navbar = document.getElementById("navbar");
         var sticky = navbar.offsetTop;
 
-        function myFunction() {
+        function stickyNav() {
             if (window.pageYOffset >= sticky) {
                 navbar.classList.add("sticky")
             } else {
