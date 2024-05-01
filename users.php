@@ -1,6 +1,7 @@
 <?php
 require_once('database.php');
-//Display Users
+
+// Display Users
 $query = 'SELECT * FROM logbook
           ORDER BY user_ID';
 $statement = $db->prepare($query);
@@ -22,39 +23,37 @@ $statement->closeCursor();
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
-<!-- the body section -->
 <body>
     <div id="navbar">
-        <div class="logo">urPokédex</div>
+        <div class="logonav">urPokédex</div>
         <ul>
             <li><a href="index.php">Home</a></li>
-            <li><a class="active" href="pokedex.php">Pokédex</a></li>
+            <li><a href="pokedex.php">Pokédex</a></li>
             <li><a href="makeAccount.php">Make an Account</a></li>
-            <li><a href="users.php">Logbook</a></li>
+            <li><a class="active" href="users.php">Logbook</a></li>
         </ul>
     </div>
-<main>
 
-    <section>
-        <!-- display a table of all Users -->
     <div class="content" style="overflow-x:auto;">
-        <h2>Logbook</h2>
-        <table>
-            <tr>
-                <th>User ID</th>
-                <th>User Name</th>
-            </tr>
-
-            <?php foreach ($users as $user) : ?>
-            <tr>
-                <td><?php echo $user['user_ID']; ?></td>
-                <td><?php echo $user['userName']; ?></td>
-            </tr>
-            <?php endforeach; ?>
+        <div class="logo"><h1>Logbook</h1></div>
+        <table class="table table-hover sticky-header">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td><?php echo $user['user_ID']; ?></td>
+                        <td><?php echo $user['userName']; ?></td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
         </table>
     </div>
-    </section>
-    
+
     <div class="footer">
         <p>&copy;<?php echo date("Y"); ?> Aidan Breshears, Chase Caldwell, and Tri Tran</p>
     </div>
@@ -90,7 +89,5 @@ $statement->closeCursor();
             document.documentElement.scrollTop = 0;
         }
     </script>
-</main>
 </body>
 </html>
-

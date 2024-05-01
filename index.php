@@ -16,11 +16,13 @@
         <a href="#home">
             <h1>urPokédex</h1>
         </a>
-        <a href="#home"><div class="scroll-down"></div></a>
+        <a href="#home">
+            <div class="scroll-down"></div>
+        </a>
     </div>
 
     <div id="navbar">
-        <div class="logo">urPokédex</div>
+        <div class="logonav">urPokédex</div>
         <ul>
             <li><a class="active" href="index.php">Home</a></li>
             <li><a href="pokedex.php">Pokédex</a></li>
@@ -41,30 +43,27 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner">
                 <div class="item active">
-                    <a href ="pokedex.php">
-                    <img src="Resources/Images/carousel1.jpeg" alt="Pikachu" style="width:100vw;height: 100vh;">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Pokédex</h1>
-                        <p>...</p></a>
-                    </div>
+                        <img src="Resources/Images/carousel1.jpeg" alt="Pikachu" style="width:100vw;height: 100vh;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Welcome to urPokédex</h1>
+                            <a href="makeAccount.php"><p>Join us</p></a>
+                        </div>
                 </div>
 
                 <div class="item">
-                    <a href ="explorer.php">
-                    <img src="Resources/Images/carousel2.png" alt="Another Pikachu" style="width:100vw;height:100vh;">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Search</h1>
-                        <p>...</p></a>
-                    </div>
+                    <a href ="pokemon.php">
+                        <img src="Resources/Images/carousel2.png" alt="Another Pikachu" style="width:100vw;height:100vh;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Search for your favorite Pokemon and more!</h1>
+                        </div>
+                    </a>
                 </div>
 
                 <div class="item">
-                    <a href ="users.php">
-                    <img src="Resources/Images/carousel3.png" alt="One more Pikachu" style="width:100vw;height:100vh;">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h1>Logbook</h1>
-                        <p>...</p></a>
-                    </div>
+                        <img src="Resources/Images/carousel3.png" alt="One more Pikachu" style="width:100vw;height:100vh;">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h1>Currently we only support 1st gen. Sorry for the inconvenience</h1>
+                        </div>
                 </div>
             </div>
 

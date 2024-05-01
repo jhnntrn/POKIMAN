@@ -177,9 +177,14 @@ body {
 .logo{
   color:orange;
   font-family: Logo;
-  margin-left: 5vw;
   font-size: x-large;
+}
 
+.logonav{
+  color:orange;
+  font-family: Logo;
+  font-size: x-large;
+  margin-left: 5vw;
 }
 
 .sticky {
@@ -314,13 +319,23 @@ body {
 
 .carousel-caption{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 5vh;
-  margin-bottom: 35vh;
+  font-size: 3vh;
+  margin-bottom: 10vh;
 }
 
 .carousel-caption h1{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-size: 10vh;
+  font-size: 6vh;
+}
+
+.carousel-caption a{
+  text-decoration: none !important;
+  color:black;
+}
+
+.carousel-caption a:hover{
+  text-decoration: none !important;
+  color:white;
 }
 
 #myBtn {
@@ -357,6 +372,13 @@ body {
   }
 }
 
+#data{
+  font-size: large;
+}
+
+#buttons {
+  color:black;
+}
 /* width */
 ::-webkit-scrollbar {
   width: 0.5vw;
@@ -377,3 +399,4 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(173, 88, 14, 0.842); 
 }
+

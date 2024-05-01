@@ -12,7 +12,7 @@
    </head>
    <body>
    <div id="navbar">
-        <div class="logo">urPokédex</div>
+        <div class="logonav">urPokédex</div>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a href="pokedex.php">Pokédex</a></li>
@@ -22,10 +22,10 @@
     </div>
 
       <div class="content">
-         <h1>Create an account</h1>
+         <div class = "logo"><h1>Create an account</h1></div>
          <form action="makeUser.php" method="post">
             <div id="data">
-               <label>User Name</label><br>
+               <label>Username</label><br>
                <input type="text" name="uName" value=""><br>
                <label>Password</label><br>
                <input type="password" name="pWord" value="">
