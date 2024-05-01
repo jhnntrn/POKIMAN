@@ -31,22 +31,15 @@ $_SESSION["order"]["dir"] = $dir;
 $sort = $orderDir[$dir];
 // set the correct query
 //End of the sorting stuff
-
-<<<<<<< Updated upstream
-$option = isset($_POST['function']) ? htmlspecialchars($_POST['function']) : null;
-$input = isset($_POST['userinput']) ? htmlspecialchars($_POST['userinput']) : null;
-=======
 $option = isset($_GET['function']) ? htmlspecialchars($_GET['function']) : null;
-
 //If the user has specified an orderBy option, increase $option by 2 to reach the appropriate combined search/sort query
->>>>>>> Stashed changes
 
 switch ($option) {
     case '0':
         // Get Pokémon of given name
-        $queryName = 'SELECT * FROM Pokedex
+        $queryName = "SELECT * FROM Pokedex
                       WHERE P_Name = :name
-                      ORDER BY id';
+                      ORDER BY $col $sort";
         $statement = $db->prepare($queryName);
         $statement->bindValue(':name', $input);
         $statement->execute();
@@ -55,9 +48,9 @@ switch ($option) {
         break;
     case '1':
         // Get Pokémon of given Type
-        $queryType = 'SELECT * FROM Pokedex
+        $queryType = "SELECT * FROM Pokedex
                       WHERE typeName = :type OR type2 = :type
-                      ORDER BY id';
+                      ORDER BY $col $sort";
         $statement = $db->prepare($queryType);
         $statement->bindValue(':type', $input);
         $statement->execute();
@@ -115,11 +108,8 @@ switch ($option) {
                     </li>
                     <li>
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
-<<<<<<< Updated upstream
-=======
                         <!-- Hidden input field to store search term -->
                         <input type="hidden" name="userinput_hidden" value="<?php echo htmlspecialchars($input); ?>">
->>>>>>> Stashed changes
                     </li>
                     <li>
                         <input type="submit" value=" ">
@@ -130,19 +120,6 @@ switch ($option) {
         <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>
-<<<<<<< Updated upstream
-                    <th><a href="?orderBy=id">ID</a></th>
-                    <th><a href="?orderBy=P_Name">Name</a></th>
-                    <th><a href="?orderBy=TypeName">Type 1</a></th>
-                    <th>Type 2</th>
-                    <th><a href="?orderBy=HP">HP</a></th>
-                    <th><a href="?orderBy=Attack">Attack</a></th>
-                    <th><a href="?orderBy=Defense">Defense</a></th>
-                    <th><a href="?orderBy=Sp_Attack">Sp. Attack</a></th>
-                    <th><a href="?orderBy=Sp_Defense">Sp. Defense</a></th>
-                    <th><a href="?orderBy=Speed">Speed</a></th>
-                    <th class="right"><a href="?orderBy=stat_total">Stat Total</a></th>
-=======
                     <th><a href="?orderBy=id&userinput=<?php echo urlencode($input); ?>">ID</a></th>
                     <th><a href="?orderBy=P_Name&userinput=<?php echo urlencode($input); ?>">Name</a></th>
                     <th><a href="?orderBy=TypeName&userinput=<?php echo urlencode($input); ?>">Type 1</a></th>
@@ -154,8 +131,6 @@ switch ($option) {
                     <th><a href="?orderBy=Sp_Defense&userinput=<?php echo urlencode($input); ?>">Sp. Defense</a></th>
                     <th><a href="?orderBy=Speed&userinput=<?php echo urlencode($input); ?>">Speed</a></th>
                     <th class="right"><a href="?orderBy=stat_total&userinput=<?php echo urlencode($input); ?>">Stat Total</a></th>
-
->>>>>>> Stashed changes
                 </tr>
             </thead>
             <tbody>
