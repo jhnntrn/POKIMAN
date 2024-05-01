@@ -131,7 +131,7 @@ switch ($option) {
                     <li>
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
                         <!-- Hidden input field to store search term -->
-                        <input type="hidden" name="search" value="<?php echo htmlspecialchars($input); ?>">
+                        <input type="hidden" name="userinput" value="<?php echo htmlspecialchars($input); ?>">
                     </li>
                     <li>
                         <input type="submit" value=" ">
