@@ -65,22 +65,20 @@ $statement->closeCursor();
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <div class="content">
-        <div class="logo"><h1>Pokémon</h1></div>
+        <div class="logo"><h1>Pokémon</h1></div><br>
         <div class="searchbar">
-            <form action="search.php" method="get">
+            <form action="search.php" method="post">
                 <ul>
                     <li>
                         <div class="list">
                             <select name="function" id="function">
-                                <option value="0" <?php if($option === '0') echo 'selected'; ?>>Name</option>
-                                <option value="1" <?php if($option === '1') echo 'selected'; ?>>Type</option>
+                                <option value="0">Name</option>
+                                <option value="1">Type</option>
                             </select>
                         </div>
                     </li>
                     <li>
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
-                        <!-- Hidden input field to store search term -->
-                        <input type="hidden" name="userinput" value="<?php echo htmlspecialchars($input); ?>">
                     </li>
                     <li>
                         <input type="submit" value=" ">
@@ -88,8 +86,7 @@ $statement->closeCursor();
                 </ul>
             </form>
         </div>
-        
-        <table class="table table-hover sticky-header">
+        <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>
                     <th><a href="?orderBy=id">ID</a></th>
