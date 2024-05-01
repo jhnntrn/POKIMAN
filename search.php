@@ -104,8 +104,8 @@ switch ($option) {
                     <li>
                         <div class="list">
                             <select name="function" id="function">
-                                <option value="0">Name</option>
-                                <option value="1">Type</option>
+                                <option value="0" <?php if($option === '0') echo 'selected'; ?>>Name</option>
+                                <option value="1" <?php if($option === '1') echo 'selected'; ?>>Type</option>
                             </select>
                         </div>
                     </li>
