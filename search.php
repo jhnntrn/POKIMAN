@@ -15,6 +15,8 @@ $orderDir = array("DESC", "ASC");
 // check if sorting column is set in URL
 if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
   $col = $_GET["orderBy"];
+
+  $input = isset($_GET['userinput_hidden']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
 }
 // check if same col is clicked as last time
 // if it is the same => change the order, if not => use default
@@ -30,8 +32,14 @@ $sort = $orderDir[$dir];
 // set the correct query
 //End of the sorting stuff
 
+<<<<<<< Updated upstream
 $option = isset($_POST['function']) ? htmlspecialchars($_POST['function']) : null;
 $input = isset($_POST['userinput']) ? htmlspecialchars($_POST['userinput']) : null;
+=======
+$option = isset($_GET['function']) ? htmlspecialchars($_GET['function']) : null;
+
+//If the user has specified an orderBy option, increase $option by 2 to reach the appropriate combined search/sort query
+>>>>>>> Stashed changes
 
 switch ($option) {
     case '0':
@@ -107,6 +115,11 @@ switch ($option) {
                     </li>
                     <li>
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
+<<<<<<< Updated upstream
+=======
+                        <!-- Hidden input field to store search term -->
+                        <input type="hidden" name="userinput_hidden" value="<?php echo htmlspecialchars($input); ?>">
+>>>>>>> Stashed changes
                     </li>
                     <li>
                         <input type="submit" value=" ">
@@ -117,6 +130,7 @@ switch ($option) {
         <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>
+<<<<<<< Updated upstream
                     <th><a href="?orderBy=id">ID</a></th>
                     <th><a href="?orderBy=P_Name">Name</a></th>
                     <th><a href="?orderBy=TypeName">Type 1</a></th>
@@ -128,6 +142,20 @@ switch ($option) {
                     <th><a href="?orderBy=Sp_Defense">Sp. Defense</a></th>
                     <th><a href="?orderBy=Speed">Speed</a></th>
                     <th class="right"><a href="?orderBy=stat_total">Stat Total</a></th>
+=======
+                    <th><a href="?orderBy=id&userinput=<?php echo urlencode($input); ?>">ID</a></th>
+                    <th><a href="?orderBy=P_Name&userinput=<?php echo urlencode($input); ?>">Name</a></th>
+                    <th><a href="?orderBy=TypeName&userinput=<?php echo urlencode($input); ?>">Type 1</a></th>
+                    <th>Type 2</th>
+                    <th><a href="?orderBy=HP&userinput=<?php echo urlencode($input); ?>">HP</a></th>
+                    <th><a href="?orderBy=Attack&userinput=<?php echo urlencode($input); ?>">Attack</a></th>
+                    <th><a href="?orderBy=Defense&userinput=<?php echo urlencode($input); ?>">Defense</a></th>
+                    <th><a href="?orderBy=Sp_Attack&userinput=<?php echo urlencode($input); ?>">Sp. Attack</a></th>
+                    <th><a href="?orderBy=Sp_Defense&userinput=<?php echo urlencode($input); ?>">Sp. Defense</a></th>
+                    <th><a href="?orderBy=Speed&userinput=<?php echo urlencode($input); ?>">Speed</a></th>
+                    <th class="right"><a href="?orderBy=stat_total&userinput=<?php echo urlencode($input); ?>">Stat Total</a></th>
+
+>>>>>>> Stashed changes
                 </tr>
             </thead>
             <tbody>

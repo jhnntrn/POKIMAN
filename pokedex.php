@@ -10,7 +10,7 @@ if (!isset($_SESSION["order"]))
 $dir = 0;
 $col = "id"; // Default sorting column
 $orderBy = array("id", "P_Name", "TypeName", "HP", "Attack", "Defense", "Sp_Attack", "Sp_Defense", "Speed", "stat_total");
-$orderDir = array("DESC", "ASC");
+$orderDir = array("ASC", "DESC");
 
 // check if sorting column is set in URL
 if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
@@ -67,18 +67,20 @@ $statement->closeCursor();
     <div class="content">
         <div class="logo"><h1>Pokémon</h1></div>
         <div class="searchbar">
-            <form action="search.php" method="post">
+            <form action="search.php" method="get">
                 <ul>
                     <li>
                         <div class="list">
                             <select name="function" id="function">
-                                <option value="0">Name</option>
-                                <option value="1">Type</option>
+                                <option value="0" <?php if($option === '0') echo 'selected'; ?>>Name</option>
+                                <option value="1" <?php if($option === '1') echo 'selected'; ?>>Type</option>
                             </select>
                         </div>
                     </li>
                     <li>
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
+                        <!-- Hidden input field to store search term -->
+                        <input type="hidden" name="userinput" value="<?php echo htmlspecialchars($input); ?>">
                     </li>
                     <li>
                         <input type="submit" value=" ">
@@ -86,7 +88,11 @@ $statement->closeCursor();
                 </ul>
             </form>
         </div>
+<<<<<<< Updated upstream
         
+=======
+        <div class="logo"><h1>Pokémon</h1></div><br>
+>>>>>>> Stashed changes
         <table class="table table-hover sticky-header">
             <thead>
                 <tr>
