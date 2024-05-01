@@ -376,6 +376,10 @@ body {
   font-size: large;
 }
 
+#data input{
+  color:black;
+}
+
 #buttons {
   color:black;
 }
