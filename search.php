@@ -33,7 +33,7 @@ $sort = $orderDir[$dir];
 $option = isset($_POST['function']) ? htmlspecialchars($_POST['function']) : null;
 $input = isset($_POST['userinput']) ? htmlspecialchars($_POST['userinput']) : null;
 
-if (isset($_GET["orderBy"])
+if (isset($_GET["orderBy"]))
 {
    $option += 2;
 }
@@ -66,11 +66,9 @@ switch ($option) {
         // Get Pokémon of given name, by given order
         $queryNameSort = "SELECT * FROM Pokedex
                       WHERE P_Name = :name
-                      ORDER :col :sort";
+                      ORDER BY $col $sort";
         $statement = $db->prepare($queryNameSort);
         $statement->bindValue(':name', $input);
-        $statement->bindValue(':col', $col);
-        $statement->bindValue(':sort', $sort);
         $statement->execute();
         $Pokedex = $statement->fetchAll();
         $statement->closeCursor();
@@ -79,21 +77,17 @@ switch ($option) {
         // Get Pokémon of given type, by given order
         $queryTypeSort = "SELECT * FROM Pokedex
                       WHERE P_Name = :type
-                      ORDER :col :sort";
+                      ORDER BY $col $sort";
         $statement = $db->prepare($queryTypeSort);
         $statement->bindValue(':name', $input);
-        $statement->bindValue(':col', $col);
-        $statement->bindValue(':sort', $sort);
         $statement->execute();
         $Pokedex = $statement->fetchAll();
         $statement->closeCursor();
         break;
     case null:
         $query = "SELECT * FROM Pokedex 
-                  ORDER BY :col :sort";
+                  ORDER BY $col $sort";
         $statement = $db->prepare($query);
-        $statement->bindValue(':col', $col);
-        $statement->bindValue(':sort', $sort);
         $statement->execute();
         $Pokedex = $statement->fetchAll();
         $statement->closeCursor();
