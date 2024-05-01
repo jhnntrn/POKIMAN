@@ -10,13 +10,16 @@ if (!isset($_SESSION["order"]))
 $dir = 0;
 $col = "id"; // Default sorting column
 $orderBy = array("id", "P_Name", "TypeName", "HP", "Attack", "Defense", "Sp_Attack", "Sp_Defense", "Speed", "stat_total");
-$orderDir = array("DESC", "ASC");
+$orderDir = array("ASC", "DESC");
 
 // check if sorting column is set in URL
 if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
   $col = $_GET["orderBy"];
 
   $input = isset($_GET['userinput_hidden']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
+} else
+{
+$input = isset($_GET['userinput']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
 }
 // check if same col is clicked as last time
 // if it is the same => change the order, if not => use default
@@ -101,8 +104,8 @@ switch ($option) {
                     <li>
                         <div class="list">
                             <select name="function" id="function">
-                                <option value="0">Name</option>
-                                <option value="1">Type</option>
+                                <option value="0" <?php if($option === '0') echo 'selected'; ?>>Name</option>
+                                <option value="1" <?php if($option === '1') echo 'selected'; ?>>Type</option>
                             </select>
                         </div>
                     </li>
