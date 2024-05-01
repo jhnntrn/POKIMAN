@@ -81,7 +81,7 @@ switch ($option) {
 </head>
 <body>
     <div id="navbar">
-        <div class="logo">urPokédex</div>
+        <div class="logonav">urPokédex</div>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a class="active" href="pokedex.php">Pokédex</a></li>
@@ -93,6 +93,7 @@ switch ($option) {
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <div class="content">
+        <div class="logo"><h1>Pokémon</h1></div><br>
         <div class="searchbar">
             <form action="search.php" method="post">
                 <ul>
@@ -113,7 +114,6 @@ switch ($option) {
                 </ul>
             </form>
         </div>
-        <div class="logo"><h1>Pokémon</h1></div><br>
         <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>
