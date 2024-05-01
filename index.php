@@ -51,7 +51,7 @@
                 </div>
 
                 <div class="item">
-                    <a href ="pokemon.php">
+                    <a href ="pokedex.php">
                         <img src="Resources/Images/carousel2.png" alt="Another Pikachu" style="width:100vw;height:100vh;">
                         <div class="carousel-caption d-none d-md-block">
                             <h1>Search for your favorite Pokemon and more!</h1>
