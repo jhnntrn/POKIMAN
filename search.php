@@ -29,14 +29,18 @@ $_SESSION["order"]["dir"] = $dir;
 $sort = $orderDir[$dir];
 // set the correct query
 //End of the sorting stuff
+
+$option = isset($_GET['function']) ? htmlspecialchars($_GET['function']) : null;
+$input = isset($_GET['userinput']) ? htmlspecialchars($_GET['userinput']) : null;
+
 //If the user has specified an orderBy option, increase $option by 2 to reach the appropriate combined search/sort query
 
 switch ($option) {
     case '0':
         // Get Pokémon of given name
-        $queryName = 'SELECT * FROM Pokedex
+        $queryName = "SELECT * FROM Pokedex
                       WHERE P_Name = :name
-                      ORDER BY id';
+                      ORDER BY $col $sort";
         $statement = $db->prepare($queryName);
         $statement->bindValue(':name', $input);
         $statement->execute();
@@ -45,9 +49,9 @@ switch ($option) {
         break;
     case '1':
         // Get Pokémon of given Type
-        $queryType = 'SELECT * FROM Pokedex
+        $queryType = "SELECT * FROM Pokedex
                       WHERE typeName = :type OR type2 = :type
-                      ORDER BY id';
+                      ORDER BY $col $sort";
         $statement = $db->prepare($queryType);
         $statement->bindValue(':type', $input);
         $statement->execute();
@@ -68,7 +72,7 @@ switch ($option) {
     case '3':
         // Get Pokémon of given type, by given order
         $queryTypeSort = "SELECT * FROM Pokedex
-                      WHERE typeName = :type
+                      WHERE typeName = :type OR type2 = :type
                       ORDER BY $col $sort";
         $statement = $db->prepare($queryTypeSort);
         $statement->bindValue(':name', $input);
