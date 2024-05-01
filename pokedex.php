@@ -88,11 +88,7 @@ $statement->closeCursor();
                 </ul>
             </form>
         </div>
-<<<<<<< Updated upstream
         
-=======
-        <div class="logo"><h1>Pokémon</h1></div><br>
->>>>>>> Stashed changes
         <table class="table table-hover sticky-header">
             <thead>
                 <tr>
