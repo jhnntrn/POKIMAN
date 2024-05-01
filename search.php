@@ -10,16 +10,11 @@ if (!isset($_SESSION["order"]))
 $dir = 0;
 $col = "id"; // Default sorting column
 $orderBy = array("id", "P_Name", "TypeName", "HP", "Attack", "Defense", "Sp_Attack", "Sp_Defense", "Speed", "stat_total");
-$orderDir = array("ASC", "DESC");
+$orderDir = array("DESC", "ASC");
 
 // check if sorting column is set in URL
 if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
   $col = $_GET["orderBy"];
-
-  $input = isset($_GET['userinput_hidden']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
-} else
-{
-$input = isset($_GET['userinput']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
 }
 // check if same col is clicked as last time
 // if it is the same => change the order, if not => use default
@@ -34,7 +29,10 @@ $_SESSION["order"]["dir"] = $dir;
 $sort = $orderDir[$dir];
 // set the correct query
 //End of the sorting stuff
+
 $option = isset($_GET['function']) ? htmlspecialchars($_GET['function']) : null;
+$input = isset($_GET['userinput']) ? htmlspecialchars($_GET['userinput']) : null;
+
 //If the user has specified an orderBy option, increase $option by 2 to reach the appropriate combined search/sort query
 
 switch ($option) {
@@ -56,6 +54,28 @@ switch ($option) {
                       ORDER BY $col $sort";
         $statement = $db->prepare($queryType);
         $statement->bindValue(':type', $input);
+        $statement->execute();
+        $Pokedex = $statement->fetchAll();
+        $statement->closeCursor();
+        break;
+    case '2':
+        // Get Pokémon of given name, by given order
+        $queryNameSort = "SELECT * FROM Pokedex
+                      WHERE P_Name = :name
+                      ORDER BY $col $sort";
+        $statement = $db->prepare($queryNameSort);
+        $statement->bindValue(':name', $input);
+        $statement->execute();
+        $Pokedex = $statement->fetchAll();
+        $statement->closeCursor();
+        break;
+    case '3':
+        // Get Pokémon of given type, by given order
+        $queryTypeSort = "SELECT * FROM Pokedex
+                      WHERE typeName = :type OR type2 = :type
+                      ORDER BY $col $sort";
+        $statement = $db->prepare($queryTypeSort);
+        $statement->bindValue(':name', $input);
         $statement->execute();
         $Pokedex = $statement->fetchAll();
         $statement->closeCursor();
@@ -97,9 +117,8 @@ switch ($option) {
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <div class="content">
-        <div class="logonav"><h1>Pokémon</h1></div>
         <div class="searchbar">
-            <form action="search.php" method="post">
+            <form action="search.php" method="get">
                 <ul>
                     <li>
                         <div class="list">
@@ -112,7 +131,7 @@ switch ($option) {
                     <li>
                         <input type="text" name="userinput" placeholder="Enter a Pokemon name or a Pokemon type">
                         <!-- Hidden input field to store search term -->
-                        <input type="hidden" name="userinput_hidden" value="<?php echo htmlspecialchars($input); ?>">
+                        <input type="hidden" name="userinput" value="<?php echo htmlspecialchars($input); ?>">
                     </li>
                     <li>
                         <input type="submit" value=" ">
@@ -120,20 +139,22 @@ switch ($option) {
                 </ul>
             </form>
         </div>
+        <div class="logo"><h1>Pokémon</h1></div><br>
         <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>
-                    <th><a href="?orderBy=id&userinput=<?php echo urlencode($input); ?>">ID</a></th>
-                    <th><a href="?orderBy=P_Name&userinput=<?php echo urlencode($input); ?>">Name</a></th>
-                    <th><a href="?orderBy=TypeName&userinput=<?php echo urlencode($input); ?>">Type 1</a></th>
+                    <th><a href="?orderBy=id&search=<?php echo urlencode($input); ?>">ID</a></th>
+                    <th><a href="?orderBy=P_Name&search=<?php echo urlencode($input); ?>">Name</a></th>
+                    <th><a href="?orderBy=TypeName&search=<?php echo urlencode($input); ?>">Type 1</a></th>
                     <th>Type 2</th>
-                    <th><a href="?orderBy=HP&userinput=<?php echo urlencode($input); ?>">HP</a></th>
-                    <th><a href="?orderBy=Attack&userinput=<?php echo urlencode($input); ?>">Attack</a></th>
-                    <th><a href="?orderBy=Defense&userinput=<?php echo urlencode($input); ?>">Defense</a></th>
-                    <th><a href="?orderBy=Sp_Attack&userinput=<?php echo urlencode($input); ?>">Sp. Attack</a></th>
-                    <th><a href="?orderBy=Sp_Defense&userinput=<?php echo urlencode($input); ?>">Sp. Defense</a></th>
-                    <th><a href="?orderBy=Speed&userinput=<?php echo urlencode($input); ?>">Speed</a></th>
-                    <th class="right"><a href="?orderBy=stat_total&userinput=<?php echo urlencode($input); ?>">Stat Total</a></th>
+                    <th><a href="?orderBy=HP&search=<?php echo urlencode($input); ?>">HP</a></th>
+                    <th><a href="?orderBy=Attack&search=<?php echo urlencode($input); ?>">Attack</a></th>
+                    <th><a href="?orderBy=Defense&search=<?php echo urlencode($input); ?>">Defense</a></th>
+                    <th><a href="?orderBy=Sp_Attack&search=<?php echo urlencode($input); ?>">Sp. Attack</a></th>
+                    <th><a href="?orderBy=Sp_Defense&search=<?php echo urlencode($input); ?>">Sp. Defense</a></th>
+                    <th><a href="?orderBy=Speed&search=<?php echo urlencode($input); ?>">Speed</a></th>
+                    <th class="right"><a href="?orderBy=stat_total&search=<?php echo urlencode($input); ?>">Stat Total</a></th>
+
                 </tr>
             </thead>
             <tbody>
