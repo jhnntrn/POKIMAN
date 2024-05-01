@@ -19,7 +19,8 @@ if (isset($_GET["orderBy"]) && in_array($_GET["orderBy"], $orderBy)) {
   $input = isset($_GET['userinput_hidden']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
 } else
 {
-$input = isset($_GET['userinput_hidden']) ? htmlspecialchars($_GET['userinput_hidden']) : null;}
+$input = isset($_GET['userinput']) ? htmlspecialchars($_GET['userinput_hidden']) : null;
+}
 // check if same col is clicked as last time
 // if it is the same => change the order, if not => use default
 if ($_SESSION["order"]["col"] == $col) {
