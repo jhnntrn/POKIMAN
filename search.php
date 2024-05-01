@@ -29,14 +29,6 @@ $_SESSION["order"]["dir"] = $dir;
 $sort = $orderDir[$dir];
 // set the correct query
 //End of the sorting stuff
-
-$option = isset($_GET['function']) ? htmlspecialchars($_GET['function']) : null;
-$input = isset($_GET['userinput']) ? htmlspecialchars($_GET['userinput']) : null;
-
-if (isset($_GET["orderBy"]))
-{
-   $option += 2;
-}
 //If the user has specified an orderBy option, increase $option by 2 to reach the appropriate combined search/sort query
 
 switch ($option) {
