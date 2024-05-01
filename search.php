@@ -33,6 +33,7 @@ $sort = $orderDir[$dir];
 $option = isset($_POST['function']) ? htmlspecialchars($_POST['function']) : null;
 $input = isset($_POST['userinput']) ? htmlspecialchars($_POST['userinput']) : null;
 
+
 switch ($option) {
     case '0':
         // Get Pokémon of given name
@@ -58,8 +59,10 @@ switch ($option) {
         break;
     case null:
         $query = "SELECT * FROM Pokedex 
-                  ORDER BY $col $sort";
+                  ORDER BY :col :sort";
         $statement = $db->prepare($query);
+        $statement->bindValue(':col', $col);
+        $statement->bindValue(':sort', $sort);
         $statement->execute();
         $Pokedex = $statement->fetchAll();
         $statement->closeCursor();
