@@ -53,7 +53,7 @@ $statement->closeCursor();
 </head>
 <body>
     <div id="navbar">
-        <div class="logo">urPokédex</div>
+        <div class="logonav">urPokédex</div>
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a class="active" href="pokedex.php">Pokédex</a></li>

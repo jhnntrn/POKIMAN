@@ -94,7 +94,7 @@ switch ($option) {
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <div class="content">
-        <div class="logo"><h1>Pokémon</h1></div>
+        <div class="logonav"><h1>Pokémon</h1></div>
         <div class="searchbar">
             <form action="search.php" method="post">
                 <ul>
