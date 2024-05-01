@@ -1,6 +1,6 @@
 <?php
-$uName = filter_input(INPUT_POST, 'uName');
-$pword = filter_input(INPUT_POST, 'pWord');
+$uName = htmlspecialchars(filter_input(INPUT_POST, 'uName'));
+$pword = htmlspecialchars(filter_input(INPUT_POST, 'pWord'));
 
 //Validate inputs
 if ($uName == null || $pword == null) {

@@ -8,15 +8,18 @@ $statement->execute();
 $users = $statement->fetchAll();
 $statement->closeCursor();
 ?>
+
 <!DOCTYPE html>
 <html>
-<!-- the head section -->
 <head>
-    <title>urPokédex - Logbook</title>
+    <title>urPokédex - Pokédex</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="Resources/pokedex.css">
+    <link rel="stylesheet" type="text/css" href="Resources/main.css">
     <link rel="icon" href="Resources/Images/pokeball.png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 
 <!-- the body section -->
@@ -26,7 +29,6 @@ $statement->closeCursor();
         <ul>
             <li><a href="index.php">Home</a></li>
             <li><a class="active" href="pokedex.php">Pokédex</a></li>
-            <li><a href="explorer.php">Explorer</a></li>
             <li><a href="makeAccount.php">Make an Account</a></li>
             <li><a href="users.php">Logbook</a></li>
         </ul>

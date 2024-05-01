@@ -93,6 +93,7 @@ switch ($option) {
     <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 
     <div class="content">
+        <div class="logo"><h1>Pokémon</h1></div>
         <div class="searchbar">
             <form action="search.php" method="post">
                 <ul>
@@ -113,7 +114,6 @@ switch ($option) {
                 </ul>
             </form>
         </div>
-        <div class="logo"><h1>Pokémon</h1></div><br>
         <table class="table table-hover bootstrap-table-sticky-header">
             <thead>
                 <tr>

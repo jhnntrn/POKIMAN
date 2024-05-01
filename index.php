@@ -13,7 +13,7 @@
 
 <body>
     <div class="header" id="header">
-        <a href="index.php">
+        <a href="#home">
             <h1>urPokédex</h1>
         </a>
         <a href="#home"><div class="scroll-down"></div></a>
